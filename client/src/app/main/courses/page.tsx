@@ -1,3 +1,4 @@
+import CourseClientComp from "@/components/courses/CourseClientComp";
 import CourseHeader from "@/components/courses/CourseHeader";
 import CourseItem from "@/components/courses/CourseItem";
 import { getCurrentUserId } from "@/lib/actions/auth.action";
@@ -18,15 +19,7 @@ export default async function Page() {
 
   return (
     <Container>
-      <CourseHeader />
-
-      <hr />
-
-      <ul className="grid grid-cols-3 gap-3 mt-4">
-        {courses.map((course) => (
-          <CourseItem course={course} key={course.id} />
-        ))}
-      </ul>
+      <CourseClientComp courses={courses} />
     </Container>
   );
 }
