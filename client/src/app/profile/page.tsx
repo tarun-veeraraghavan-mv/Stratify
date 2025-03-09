@@ -1,9 +1,11 @@
 import { getCurrentUser, getCurrentUserId } from "@/lib/actions/auth.action";
 import { createProfile } from "@/lib/actions/profile.actions";
+// import { redirect } from "next/navigation";
 import React from "react";
 
 export default async function Page() {
   const id = (await getCurrentUserId()) as string;
+
   const user = await getCurrentUser(parseInt(id));
 
   return (

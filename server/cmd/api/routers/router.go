@@ -11,7 +11,8 @@ func SetupRouter() *gin.Engine {
 
 	router.POST("/api/v1/users", controllers.CreateUser)
 	router.GET("/api/v1/users", controllers.GetAllUsers)
-	router.GET("/api/v1/users/:id", controllers.GetUserById)
+	router.GET("/api/v1/users/byId/:id", controllers.GetUserById)
+	router.GET("/api/v1/users/byEmail/:email", controllers.GetUserByEmail)
 
 	router.GET("/api/v1/users/:id/profile", controllers.GetProfileForUser)
 	router.POST("/api/v1/profile", controllers.CreateProfile)

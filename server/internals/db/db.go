@@ -18,7 +18,10 @@ func ConnectDB() {
 		panic("Failed to connect to Supabase!")
 	}
 
-	err = db.AutoMigrate(&models.User{}, &models.Profile{}, &models.Course{})
+	err = db.AutoMigrate(
+		&models.User{}, 
+		&models.Profile{}, 
+		&models.Course{})
 	if err != nil {
 		panic("error migrating database: " + err.Error())
 	}
