@@ -37,10 +37,9 @@ func GetCoursesForUser(c *gin.Context) {
 
 	id := c.Param("id")
 
-	if err := db.DB.Where("user_id = ?", id).First(&courses).Error; err != nil {
-		c.JSON(http.StatusNotFound, gin.H{
-			"error": "unable to fetch a course for the user",
-		})
+	if err := db.DB.Where("user_id = ?", id).Find(&courses).Error; err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "unable to fetch courses for the user"})
+		return
 	}
 
 	c.JSON(http.StatusOK, courses)

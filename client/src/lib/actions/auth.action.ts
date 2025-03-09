@@ -80,7 +80,18 @@ export async function login(formData: FormData) {
   );
 
   if (user.data.password === password) {
-    redirect("/");
+    const token = jwt.sign({ id: user.data.id }, JWT_SECRET, {
+      expiresIn: JWT_EXPIRES_IN,
+    });
+
+    (await cookies()).set("token", token, {
+      httpOnly: true,
+      secure: false,
+      sameSite: "strict",
+      path: "/",
+    });
+
+    redirect("/main/courses");
   } else {
     console.log("Wrong password");
   }
