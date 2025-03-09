@@ -9,7 +9,7 @@ import { Decoded } from "../types/auth.types";
 const JWT_SECRET = "qwsqwehweruwehrweiourhwer";
 const JWT_EXPIRES_IN = "90d";
 
-const PROD_BACKEND_URL = process.env.BACKEND_URL as string;
+// const PROD_BACKEND_URL = process.env.BACKEND_URL as string;
 const DEV_BACKEND_URL = process.env.DEV_BACKEND_URL as string;
 
 export async function signup(formData: FormData) {

@@ -4,7 +4,7 @@ import axios from "axios";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
-const PROD_BACKEND_URL = process.env.BACKEND_URL as string;
+// const PROD_BACKEND_URL = process.env.BACKEND_URL as string;
 const DEV_BACKEND_URL = process.env.DEV_BACKEND_URL as string;
 
 export async function createCourse(formData: FormData) {
@@ -22,7 +22,7 @@ export async function createCourse(formData: FormData) {
   const semesterColor = formData.get("semesterColor") as string;
   const user_id = formData.get("user_id") as string;
 
-  const course = await axios.post(`${DEV_BACKEND_URL}/api/v1/course`, {
+  await axios.post(`${DEV_BACKEND_URL}/api/v1/course`, {
     semesterNumber: parseInt(semesterNumber),
     name,
     proffessorName,

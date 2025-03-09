@@ -1,6 +1,4 @@
 import CourseClientComp from "@/components/courses/CourseClientComp";
-import CourseHeader from "@/components/courses/CourseHeader";
-import CourseItem from "@/components/courses/CourseItem";
 import { getCurrentUserId } from "@/lib/actions/auth.action";
 import { getCoursesForUser } from "@/lib/actions/course.actions";
 import { Course } from "@/lib/types/course.types";

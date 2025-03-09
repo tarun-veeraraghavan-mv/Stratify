@@ -3,7 +3,7 @@
 import axios from "axios";
 import { redirect } from "next/navigation";
 
-const PROD_BACKEND_URL = process.env.BACKEND_URL as string;
+// const PROD_BACKEND_URL = process.env.BACKEND_URL as string;
 const DEV_BACKEND_URL = process.env.DEV_BACKEND_URL as string;
 
 export async function createProfile(formData: FormData) {
