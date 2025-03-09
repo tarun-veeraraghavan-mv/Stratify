@@ -31,7 +31,7 @@ export default async function Page() {
           name="dateOfBirth"
           type="date"
         />
-        <Select labelText="Gender" selectData={selectData} />
+        <Select labelText="Gender" selectData={selectData} name="gender" />
         <Input
           labelText="College Location"
           inputText="Location"
