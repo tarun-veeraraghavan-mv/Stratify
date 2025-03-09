@@ -9,19 +9,18 @@ import { Decoded } from "../types/auth.types";
 const JWT_SECRET = "qwsqwehweruwehrweiourhwer";
 const JWT_EXPIRES_IN = "90d";
 
+const PROD_BACKEND_URL = process.env.BACKEND_URL as string;
+
 export async function signup(formData: FormData) {
   const name = formData.get("name");
   const email = formData.get("email");
   const password = formData.get("password");
 
-  const user = await axios.post(
-    "https://stratify-production.up.railway.app/api/v1/users",
-    {
-      name,
-      email,
-      password,
-    }
-  );
+  const user = await axios.post(`${PROD_BACKEND_URL}/api/v1/users`, {
+    name,
+    email,
+    password,
+  });
 
   const token = jwt.sign({ id: user.data.user.id }, JWT_SECRET, {
     expiresIn: JWT_EXPIRES_IN,
@@ -60,9 +59,7 @@ export async function getCurrentUserId() {
 }
 
 export async function getCurrentUser(id: number) {
-  const user = await axios.get(
-    `https://stratify-production.up.railway.app/api/v1/users/${id}`
-  );
+  const user = await axios.get(`${PROD_BACKEND_URL}/api/v1/users/${id}`);
 
   console.log(user.data);
 
