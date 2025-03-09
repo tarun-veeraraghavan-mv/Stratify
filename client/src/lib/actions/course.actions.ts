@@ -39,6 +39,7 @@ export async function createCourse(formData: FormData) {
   });
 
   revalidatePath("/main/courses");
+  revalidatePath("/main/todos");
 
   redirect("/main/courses");
 }

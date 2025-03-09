@@ -13,7 +13,7 @@ export default function CourseHeader({ input, setInput }: CourseHeaderProps) {
       <input
         type="text"
         placeholder="Search your courses"
-        className="py-1 px-2 bg-gray-300 w-[300px] rounded-lg focus:outline-none focus:ring-0 text-gray-900"
+        className="py-1 px-2 bg-gray-300 w-[300px] rounded-lg focus:outline-none focus:ring-0 text-gray-900 focus:w-[370px] transition-all duration-200"
         value={input}
         onChange={(e) => setInput(e.target.value)}
       />

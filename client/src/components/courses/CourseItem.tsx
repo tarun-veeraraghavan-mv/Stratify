@@ -1,6 +1,7 @@
 import { Course } from "@/lib/types/course.types";
 import CourseDifficultyChip from "@/ui/CourseDifficultyChip";
 import React from "react";
+import CourseItemHeader from "./CourseItemHeader";
 
 interface CourseItemProps {
   course: Course;
@@ -9,10 +10,7 @@ interface CourseItemProps {
 export default function CourseItem({ course }: CourseItemProps) {
   return (
     <li key={course.id} className="rounded-lg shadow-2xl overflow-hidden">
-      <div style={{ backgroundColor: course.semesterColor }} className="p-2">
-        <p className="text-md font-bold">Semester {course.semesterNumber}</p>
-        <p className="text-lg">{course.name}</p>
-      </div>
+      <CourseItemHeader course={course} />
       <hr />
       <div className="py-3 px-2">
         <div className="flex gap-2 align-middle">

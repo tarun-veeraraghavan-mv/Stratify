@@ -21,7 +21,8 @@ func ConnectDB() {
 	err = db.AutoMigrate(
 		&models.User{}, 
 		&models.Profile{}, 
-		&models.Course{})
+		&models.Course{},
+		&models.Todo{})
 	if err != nil {
 		panic("error migrating database: " + err.Error())
 	}

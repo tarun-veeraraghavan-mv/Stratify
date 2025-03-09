@@ -13,7 +13,13 @@ export default function Input({
   name,
   type,
 }: InputProps) {
-  if (type === "text" || type === "email" || type === "password") {
+  if (
+    type === "text" ||
+    type === "email" ||
+    type === "password" ||
+    type === "date" ||
+    type === "time"
+  ) {
     return (
       <div>
         <label htmlFor={name} className="text-md block font-bold">
