@@ -2,12 +2,23 @@ package routers
 
 import (
 	"server/cmd/api/controllers"
+	"time"
 
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
 
 func SetupRouter() *gin.Engine {
 	router := gin.Default()
+
+	router.Use(cors.New(cors.Config{
+		AllowOrigins: []string{"http://localhost:3000", "http://stratify-azure.vercel.app"}, // React frontend URL
+		AllowMethods:     []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
+		AllowHeaders:     []string{"Origin", "Content-Type", "Authorization"},
+		ExposeHeaders:    []string{"Content-Length"},
+		AllowCredentials: true, // Allow cookies & JWT in headers
+		MaxAge:           12 * time.Hour,
+	}))
 
 	router.POST("/api/v1/users", controllers.CreateUser)
 	router.GET("/api/v1/users", controllers.GetAllUsers)
