@@ -35,20 +35,31 @@ export default async function Page() {
             <CourseItemHeader course={course} />
 
             <div className="p-1 flex items-start justify-between">
-              <p className="text-lg font-bold self-center">
-                {todos.filter(
-                  (todo) =>
-                    todo.course_id === course.id && todo.completed === false
-                ).length > 0
-                  ? `${
-                      todos.filter(
-                        (todo) =>
-                          todo.course_id === course.id &&
-                          todo.completed === false
-                      ).length
-                    } todo left`
-                  : "No todos left"}
-              </p>
+              <div className="flex gap-2">
+                <p className="text-lg font-bold self-center">
+                  {todos.filter(
+                    (todo) =>
+                      todo.course_id === course.id && todo.completed === false
+                  ).length > 0
+                    ? `❌ ${
+                        todos.filter(
+                          (todo) =>
+                            todo.course_id === course.id &&
+                            todo.completed === false
+                        ).length
+                      } todo left`
+                    : "No todos left"}{" "}
+                  |
+                </p>
+                <p className="text-lg font-bold self-center">
+                  {todos.filter((todo) => todo.completed === true).length > 0
+                    ? `👍 ${
+                        todos.filter((todo) => todo.completed === true).length
+                      } todo completed`
+                    : "No todos left"}
+                </p>
+              </div>
+
               <Link
                 href={`/main/todos/add-todo/${course.id}`}
                 className="rounded-lg p-2 bg-emerald-500 text-white"
@@ -77,3 +88,6 @@ export default async function Page() {
     </Container>
   );
 }
+
+
+//  VzKjjQP2ItirHIwb

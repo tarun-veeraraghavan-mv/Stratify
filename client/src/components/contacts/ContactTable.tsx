@@ -27,6 +27,7 @@ export default function ContactTable({ contacts }: ContactTableProps) {
           </React.Fragment>
         ))}
       </ul>
+      
       {!contacts.length && (
         <p className="text-center text-lg mt-5 font-bold">No results found!</p>
       )}

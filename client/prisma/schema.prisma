@@ -16,7 +16,16 @@ datasource db {
 
 model FileUpload {
   id Int @id @default(autoincrement())
-  name String? @default("")
-  fileUrl String?
+  name String
+  fileUrl String
   courseId Int 
+  userId Int
+}
+
+model Link {
+  id Int @id @default(autoincrement())
+  name String
+  link String
+  courseId Int
+  userId Int
 }

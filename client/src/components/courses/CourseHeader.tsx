@@ -17,12 +17,20 @@ export default function CourseHeader({ input, setInput }: CourseHeaderProps) {
         value={input}
         onChange={(e) => setInput(e.target.value)}
       />
-      <Link
-        href="/main/courses/add-course"
-        className="px-2 py-1 rounded-md border-none bg-emerald-500 text-white cursor-pointer"
-      >
-        + Add Course
-      </Link>
+      <div className="flex gap-2">
+        <Link
+          href="/main/courses/add-course"
+          className="px-2 py-1 rounded-md border-none bg-emerald-500 text-white cursor-pointer"
+        >
+          + Add Course
+        </Link>
+        <Link
+          href="/main/files"
+          className="px-2 py-1 rounded-md border-none bg-blue-500 text-white cursor-pointer"
+        >
+          View Files
+        </Link>
+      </div>
     </div>
   );
 }
