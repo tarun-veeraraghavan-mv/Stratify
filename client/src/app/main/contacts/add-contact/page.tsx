@@ -3,9 +3,14 @@ import { createContact } from "@/lib/actions/contact.action";
 import Input from "@/ui/Input";
 import SubmitButton from "@/ui/SubmitButton";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 
 export default async function page() {
   const id = (await getCurrentUserId()) as string;
+
+  if (!id) {
+    redirect("/");
+  }
 
   return (
     <div className="max-w-[500px] px-[32px] mx-auto my-[20px]">

@@ -52,7 +52,7 @@ export default async function Page(props: { params: pageParams }) {
   const { courseId } = await props.params;
 
   if (!id) {
-    redirect("/signup");
+    redirect("/");
   }
 
   return (

@@ -22,7 +22,7 @@ export default function Page() {
       </form>
       <div className="w-full text-center">
         <Link
-          href="/signup"
+          href="/"
           className="text-md text-gray-500 border-gray-400 border-b-2 pb-0.5 cursor-pointer hover:border-white"
         >
           Dont have an account? Signin &rarr;

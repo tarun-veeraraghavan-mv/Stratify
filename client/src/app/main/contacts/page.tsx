@@ -9,7 +9,7 @@ export default async function Page() {
   const id = (await getCurrentUserId()) as string;
 
   if (!id) {
-    redirect("/main/courses");
+    redirect("/");
   }
 
   const contacts: Contact[] = await getContactsForUser(parseInt(id));

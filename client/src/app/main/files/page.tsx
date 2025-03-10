@@ -9,7 +9,7 @@ export default async function Page() {
   const id = await getCurrentUserId();
 
   if (!id) {
-    redirect("/signup");
+    redirect("/");
   }
 
   const files = await viewFiles(parseInt(id));

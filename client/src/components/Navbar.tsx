@@ -37,7 +37,7 @@ export default async function Navbar() {
             width={40}
             height={40}
           />
-          <p className="self-center ">{user.name}</p>
+          <p className="self-center ">{user.name?.split(" ")[0]}</p>
           <SignoutButton />
         </li>
       </ul>

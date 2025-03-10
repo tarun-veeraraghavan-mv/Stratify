@@ -75,7 +75,7 @@ export default async function page() {
   const id = (await getCurrentUserId()) as string;
 
   if (!id) {
-    redirect("/signup");
+    redirect("/");
   }
 
   const user = await getCurrentUser(parseInt(id));
@@ -84,7 +84,9 @@ export default async function page() {
     <div className="max-w-[500px] px-[32px] mx-auto my-[20px]">
       <div className="flex justify-between">
         <h2 className="text-xl font-bold mb-2">Add course</h2>
-        <Link href="/main/courses" className="underline">&larr; Go back</Link>
+        <Link href="/main/courses" className="underline">
+          &larr; Go back
+        </Link>
       </div>
       <form className="flex gap-4 flex-col" action={createCourse}>
         <div className="flex flex-col gap-3">

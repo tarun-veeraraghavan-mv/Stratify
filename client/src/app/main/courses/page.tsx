@@ -9,7 +9,7 @@ export default async function Page() {
   const id = (await getCurrentUserId()) as string;
 
   if (!id) {
-    redirect("/signup");
+    redirect("/");
   }
 
   const courses: Course[] = await getCoursesForUser(parseInt(id));
