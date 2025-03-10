@@ -1,11 +1,11 @@
-import { getCurrentUserId } from "@/lib/actions/auth.action";
+// import { getCurrentUserId } from "@/lib/actions/auth.action";
 import { createTodo } from "@/lib/actions/todos.action";
 import { SelectDataOptions } from "@/lib/types/ui/Select";
 import Input from "@/ui/Input";
 import Select from "@/ui/Select";
 // import Select from "@/ui/Select";
 import SubmitButton from "@/ui/SubmitButton";
-import { redirect } from "next/navigation";
+// import { redirect } from "next/navigation";
 import React from "react";
 
 const progressOptions: SelectDataOptions[] = [
@@ -44,16 +44,16 @@ const priorityOptions: SelectDataOptions[] = [
   },
 ];
 
-export default async function Page({
-  params,
-}: {
-  params: { courseId: string };
-}) {
-  const id = await getCurrentUserId();
+export default function Page({ params }: { params: { courseId: string } }) {
+  const { courseId } = params;
 
-  if (!id) {
-    redirect("/signup");
-  }
+  // const id = await getCurrentUserId();
+
+  // if (!id) {
+  //   redirect("/signup");
+  // }
+
+  console.log(courseId);
 
   return (
     <div className="max-w-[500px] px-[32px] mx-auto my-[20px]">
@@ -94,7 +94,7 @@ export default async function Page({
             name="desc"
             type="text"
           />
-          <input type="hidden" value={id} name="user_id" id="user_id" />
+          {/* <input type="hidden" value={id} name="user_id" id="user_id" /> */}
           <input
             type="hidden"
             value={parseInt(params.courseId)}
