@@ -1,7 +1,7 @@
-import { signup } from "@/lib/actions/auth.action";
-import Input from "@/ui/Input";
-import SmallContainer from "@/ui/SmallContainer";
-import SubmitButton from "@/ui/SubmitButton";
+import { signup } from "../lib/actions/auth.action";
+import Input from "../ui/Input";
+import SmallContainer from "../ui/SmallContainer";
+import SubmitButton from "../ui/SubmitButton";
 import Link from "next/link";
 import React from "react";
 

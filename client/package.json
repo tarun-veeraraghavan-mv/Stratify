@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "npx prisma generate && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "vitest",
+    "test:cov": "vitest --coverage --watch"
   },
   "dependencies": {
     "@heroui/react": "^2.7.5",
@@ -22,14 +24,20 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^14.3.1",
+    "@testing-library/user-event": "^14.6.1",
     "@types/jsonwebtoken": "^9.0.9",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@vitest/coverage-v8": "^3.0.8",
     "eslint": "^9",
     "eslint-config-next": "15.2.1",
+    "jsdom": "^26.0.0",
     "prisma": "^6.4.1",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^3.0.8"
   }
 }

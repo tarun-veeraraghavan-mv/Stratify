@@ -1,6 +1,7 @@
 "use client";
 
 import { useFormStatus } from "react-dom";
+import React from "react";
 
 export default function SubmitButton({ text }: { text: string }) {
   const { pending } = useFormStatus();
