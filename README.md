@@ -13,7 +13,10 @@ The **Stratify** is a modern solution for college students to manage their acade
 
 ## Tech Stack & Why We Chose It ⚙️
 
-+ **Next.js + TypeScript 🚀** – Ensures a smooth, fast, and maintainable frontend experience, perfect for a student dashboard that needs reliability and performance. TypeScript helps prevent errors and improves scalability.
-+ **Go (Gin Framework) ⚡** – Chosen for its speed and efficiency, Go allows the backend to handle multiple requests seamlessly, making the app responsive and scalable.
-+ **PostgreSQL 🛠️** – A rock-solid database for managing structured student data like courses, tasks, and deadlines while ensuring reliability and data integrity.
-+ **Vitest + React Testing Library 🧪** – Enables fast and reliable testing to ensure every feature works smoothly, reducing potential issues before they affect users.
+Building a planner app for students requires speed, reliability, and scalability, ensuring tasks, schedules, and goals are always accessible. Every technology in this stack was carefully selected to provide the best experience for students.
+
++ **Next.js 🚀** – Chosen for its Server-Side Rendering (SSR) and Static Site Generation (SSG), ensuring fast load times and a smooth experience, even on slower networks. SSR improves SEO for public features, while SSG helps pre-render important pages for instant loading.
++ **TypeScript 🔒** - Used for type safety and better code maintainability. It reduces runtime errors and helps developers write more robust and scalable code, ensuring fewer bugs in student data management.
++ **Go (Gin Framework) ⚡** – Built with concurrency and performance in mind, Go allows the backend to handle multiple user requests efficiently. The Gin framework adds speed and lightweight routing, making API calls fast and reducing response times for students managing their coursework.
++ **PostgreSQL 💾** – A highly reliable relational database, ensuring data consistency for student schedules, tasks, and stored files. Chosen for its strong ACID compliance, PostgreSQL prevents data loss and corruption while handling complex queries efficiently.
++ **Vitest + React Testing Library 🧪** – A lightning-fast testing framework designed for modern applications. It ensures the planner’s core functionality remains stable, helping developers catch issues before they reach users. Focuses on testing user interactions, ensuring buttons, forms, and features behave as expected, improving the overall user experience.
