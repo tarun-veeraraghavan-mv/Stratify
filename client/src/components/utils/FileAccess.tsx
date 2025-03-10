@@ -1,13 +1,18 @@
+"use client";
+
+import { deleteFile } from "@/lib/actions/fileUpload.action";
 import { FileUpload } from "@prisma/client";
 import React from "react";
 
 interface FileAccessProps {
   files: FileUpload[];
+  handleDelete: (fileId: number) => void;
 }
 
 export default function FileAccess({ files }: FileAccessProps) {
   console.log(files);
   const courseId = 12;
+
   return (
     <div>
       {files
@@ -22,20 +27,14 @@ export default function FileAccess({ files }: FileAccessProps) {
               {file.name}: <span className="underline">View course file</span>
             </a>
 
-            {/* <button
+            <button
               className="text-red-500 text-md"
               onClick={() => deleteFile(file.id)}
             >
               Delete
-            </button> */}
+            </button>
           </div>
         ))}
     </div>
   );
 }
-
-// https://ajneyuqnepdytnzampyq.supabase.co/storage/v1/object/public/courses//1741572796367-db.sqlite
-
-// WHAT WE GOT: https://emgpuifemogjyllulvyp.supabase.co/storage/v1/object/public/courses//1741573485583-db.sqlite
-
-// WHAT WE WANT: https://ajneyuqnepdytnzampyq.supabase.co/storage/v1/object/public/courses//1741573485583-db.sqlite

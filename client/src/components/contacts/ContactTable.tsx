@@ -1,3 +1,6 @@
+"use client";
+
+import { deleteContact } from "@/lib/actions/contact.action";
 import { Contact } from "@/lib/types/contact.types";
 import React from "react";
 
@@ -8,8 +11,9 @@ interface ContactTableProps {
 export default function ContactTable({ contacts }: ContactTableProps) {
   return (
     <div>
-      <ul className="grid grid-cols-[100px_200px_200px_200px_200px_200px] max-w-[1100px] overflow-x-auto mt-3">
-        <li className="p-2 bg-red-300 rounded-tl-lg">Number</li>
+      <ul className="grid grid-cols-[150px_100px_200px_200px_200px_200px_200px] max-w-[1100px] overflow-x-auto mt-3">
+        <li className="p-2 rounded-tl-lg">Delete contact</li>
+        <li className="p-2 bg-red-300 ">Number</li>
         <li className="p-2 bg-blue-300">Name</li>
         <li className="p-2 bg-rose-300">Role</li>
         <li className="p-2 bg-green-300">Email</li>
@@ -18,6 +22,9 @@ export default function ContactTable({ contacts }: ContactTableProps) {
 
         {contacts.map((contact) => (
           <React.Fragment key={contact.id}>
+            <li>
+              <button onClick={() => deleteContact(contact.id)}>Delete</button>
+            </li>
             <li className="p-2 ">{contact.id}</li>
             <li className="p-2 ">{contact.name}</li>
             <li className="p-2 ">{contact.role}</li>
@@ -27,7 +34,7 @@ export default function ContactTable({ contacts }: ContactTableProps) {
           </React.Fragment>
         ))}
       </ul>
-      
+
       {!contacts.length && (
         <p className="text-center text-lg mt-5 font-bold">No results found!</p>
       )}

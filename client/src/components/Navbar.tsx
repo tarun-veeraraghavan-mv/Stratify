@@ -4,6 +4,7 @@ import React from "react";
 import defualtUserImg from "../../public/default_user.png";
 import Image from "next/image";
 import Link from "next/link";
+import SignoutButton from "./SignoutButton";
 
 export default async function Navbar() {
   const id = (await getCurrentUserId()) as string;
@@ -29,7 +30,7 @@ export default async function Navbar() {
         <li className="text-lg font-bold self-center">
           <Link href="/main/contacts">Contacts</Link>
         </li>
-        <li className="text-lg font-bold flex align-middle">
+        <li className="text-lg font-bold flex gap-1 align-middle">
           <Image
             src={defualtUserImg}
             alt="Defualt User Avatar"
@@ -37,6 +38,7 @@ export default async function Navbar() {
             height={40}
           />
           <p className="self-center ">{user.name}</p>
+          <SignoutButton />
         </li>
       </ul>
       <div className="sm:hidden py-4 px-5 text-lg font-bold">Menu</div>

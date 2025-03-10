@@ -36,3 +36,11 @@ export async function createContact(formData: FormData) {
 
   redirect("/main/contacts");
 }
+
+export async function deleteContact(id: number) {
+  await axios.delete(`${DEV_BACKEND_URL}/api/v1/contact/${id}`);
+
+  revalidatePath("/main/contacts");
+
+  redirect("/main/contacts");
+}

@@ -5,11 +5,12 @@ import { redirect } from "next/navigation";
 import jwt from "jsonwebtoken";
 import { cookies } from "next/headers";
 import { Decoded } from "../types/auth.types";
+import { URL } from "../constants";
 
 const JWT_SECRET = "qwsqwehweruwehrweiourhwer";
 const JWT_EXPIRES_IN = "90d";
 
-const PROD_BACKEND_URL = process.env.BACKEND_URL as string;
+const PROD_BACKEND_URL = URL;
 // const DEV_BACKEND_URL = process.env.DEV_BACKEND_URL as string;
 
 export async function signup(formData: FormData) {
@@ -95,4 +96,16 @@ export async function login(formData: FormData) {
   } else {
     console.log("Wrong password");
   }
+}
+
+export async function signOut() {
+  (await cookies()).set("token", "", {
+    httpOnly: true,
+    secure: false,
+    sameSite: "strict",
+    path: "/",
+    expires: new Date(0),
+  });
+
+  redirect("/signup");
 }

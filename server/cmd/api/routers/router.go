@@ -39,6 +39,7 @@ func SetupRouter() *gin.Engine {
 
 	router.POST("/api/v1/contact", controllers.CreateContact)
 	router.GET("/api/v1/contact/:id", controllers.GetContactForUser)
+	router.DELETE("/api/v1/contact/:id", controllers.DeleteContact)
 
 	return router
 }	

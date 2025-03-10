@@ -2,6 +2,7 @@
 
 import FileAccess from "@/components/utils/FileAccess";
 import FileUpload from "@/components/utils/FileUpload";
+import { deleteFile } from "@/lib/actions/fileUpload.action";
 import { FileUpload as FileUploadType } from "@prisma/client";
 import { useState } from "react";
 
@@ -40,7 +41,7 @@ export default function Client({
       <hr />
 
       <div className="mt-3">
-        <FileAccess files={filteredFiles} />
+        <FileAccess files={filteredFiles} handleDelete={deleteFile} />
       </div>
     </div>
   );

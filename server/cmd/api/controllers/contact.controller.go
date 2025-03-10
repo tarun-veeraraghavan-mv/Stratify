@@ -43,3 +43,22 @@ func GetContactForUser(c *gin.Context) {
 
 	c.JSON(http.StatusOK, contacts)
 }
+
+func DeleteContact(c *gin.Context) {
+	var contact models.Contact
+	id := c.Param("id")
+
+	if err := db.DB.First(&contact, id).Error; err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"error": "Unable to fetch contact for this user",
+		})
+		return
+	}
+
+	if err := db.DB.Delete(&contact).Error; err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to delete contact"})
+		return
+	}
+	
+	c.JSON(http.StatusOK, gin.H{"message": "Contact deleted successfully"})
+}

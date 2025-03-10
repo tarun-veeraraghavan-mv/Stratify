@@ -55,7 +55,7 @@ func DeleteCourse(c *gin.Context) {
 				"error": "Unable to delete associated todos",
 		})
 		return
-}
+	}	
 
 
 	if err := db.DB.First(&course, id).Error; err != nil {
