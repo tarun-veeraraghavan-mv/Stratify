@@ -44,7 +44,7 @@ const priorityOptions: SelectDataOptions[] = [
   },
 ];
 
-export default async function page({
+export default async function Page({
   params,
 }: {
   params: { courseId: string };
