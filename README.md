@@ -11,4 +11,7 @@ The **Stratify** is a modern solution for college students to manage their acade
 + **Best College Tracking Experience 🏆:**  Designed to provide the most streamlined experience for college students. The app allows users to track courses, assignments, and even save important files and links to stay organized and prepared for their academic journey.
 + **Focused on Enhancing Productivity ⏳:** The app is built with the sole purpose of increasing students' productivity. By consolidating course details, tasks, goals, and important links/files in one place, it eliminates the need to juggle multiple apps or paper planners. This streamlined approach allows students to focus more on learning and less on organizing, helping them stay efficient and effective throughout their academic life.
 
-## Tech Stack ⚙️
+## Tech Stack & Why We Chose It ⚙️
+
++ **Next.js + TypeScript 🚀** – Ensures a smooth, fast, and maintainable frontend experience, perfect for a student dashboard that needs reliability and performance. TypeScript helps prevent errors and improves scalability.
++ **Go (Gin Framework) ⚡** – Chosen for its speed and efficiency, Go allows the backend to handle multiple requests seamlessly, making the app responsive and scalable.
