@@ -9,8 +9,13 @@ interface TodoItemProps {
 
 export default function TodoItem({ todo }: TodoItemProps) {
   return (
-    <li className="bg-gray-200 rounded-md p-2">
+    <li className="bg-gray-100 rounded-md p-2 items-start">
+      <div className="flex gap-2 align-middle">
+        <p className="p-1 rounded-lg bg-green-300">{todo.progress}</p>
+        <p className="p-1 rounded-lg bg-green-300">{todo.priority}</p>
+      </div>
       <p>📕 Todo name: {todo.name}</p>
+      <p>✍🏻 Remarks: {todo.remarks}</p>
       <p>⏰ Due date: {todo.dueDate}</p>
       <div className="flex gap-2">
         <button

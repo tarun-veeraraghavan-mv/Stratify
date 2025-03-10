@@ -51,3 +51,13 @@ export async function getCoursesForUser(id: number) {
 
   return courses.data;
 }
+
+export async function deleteCourse(id: number) {
+  try {
+    await axios.delete(`${DEV_BACKEND_URL}/api/v1/course/${id}`);
+
+    revalidatePath("/main/courses");
+  } catch (error) {
+    console.log(error);
+  }
+}

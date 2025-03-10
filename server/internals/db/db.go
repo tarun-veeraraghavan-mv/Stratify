@@ -22,7 +22,8 @@ func ConnectDB() {
 		&models.User{}, 
 		&models.Profile{}, 
 		&models.Course{},
-		&models.Todo{})
+		&models.Todo{},
+		&models.Contact{})
 	if err != nil {
 		panic("error migrating database: " + err.Error())
 	}

@@ -44,3 +44,31 @@ func GetCoursesForUser(c *gin.Context) {
 
 	c.JSON(http.StatusOK, courses)
 }
+
+func DeleteCourse(c *gin.Context) {
+	var course models.Course
+	id := c.Param("id")
+
+	// First, delete associated todos
+	if err := db.DB.Where("course_id = ?", id).Delete(&models.Todo{}).Error; err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{
+				"error": "Unable to delete associated todos",
+		})
+		return
+}
+
+
+	if err := db.DB.First(&course, id).Error; err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"error": "Unable to fetch todos for this user",
+		})
+		return
+	}
+
+	if err := db.DB.Delete(&course).Error; err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to delete todo"})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"message": "Course deleted successfully"})
+}

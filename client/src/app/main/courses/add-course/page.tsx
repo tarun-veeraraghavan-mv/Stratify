@@ -4,6 +4,7 @@ import { SelectDataOptions } from "@/lib/types/ui/Select";
 import Input from "@/ui/Input";
 import Select from "@/ui/Select";
 import SubmitButton from "@/ui/SubmitButton";
+import Link from "next/link";
 import { redirect } from "next/navigation";
 
 const difficultOptions: SelectDataOptions[] = [
@@ -81,7 +82,10 @@ export default async function page() {
 
   return (
     <div className="max-w-[500px] px-[32px] mx-auto my-[20px]">
-      <h2 className="text-xl font-bold mb-2">Add course</h2>
+      <div className="flex justify-between">
+        <h2 className="text-xl font-bold mb-2">Add course</h2>
+        <Link href="/main/courses" className="underline">&larr; Go back</Link>
+      </div>
       <form className="flex gap-4 flex-col" action={createCourse}>
         <div className="flex flex-col gap-3">
           <Input

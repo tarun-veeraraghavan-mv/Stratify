@@ -18,7 +18,8 @@ export default function Input({
     type === "email" ||
     type === "password" ||
     type === "date" ||
-    type === "time"
+    type === "time" ||
+    type === "phone"
   ) {
     return (
       <div>

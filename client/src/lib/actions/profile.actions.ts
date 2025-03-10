@@ -28,5 +28,5 @@ export async function createProfile(formData: FormData) {
 
   console.log(profile);
 
-  redirect("/");
+  redirect("/main/courses");
 }

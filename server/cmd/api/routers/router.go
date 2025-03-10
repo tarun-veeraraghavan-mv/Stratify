@@ -30,11 +30,15 @@ func SetupRouter() *gin.Engine {
 
 	router.POST("/api/v1/course", controllers.CreateCourse)
 	router.GET("/api/v1/users/:id/course", controllers.GetCoursesForUser)
+	router.DELETE("/api/v1/course/:id", controllers.DeleteCourse)
 
 	router.POST("/api/v1/todo", controllers.CreateTodo)
 	router.GET("/api/v1/users/:id/todo", controllers.GetTodosForUser)
 	router.PATCH("/api/v1/todo/:id", controllers.MarkTodoCompleted)
 	router.DELETE("/api/v1/todo/:id", controllers.DeleteTodo)
+
+	router.POST("/api/v1/contact", controllers.CreateContact)
+	router.GET("/api/v1/contact/:id", controllers.GetContactForUser)
 
 	return router
 }	

@@ -23,14 +23,31 @@ export default async function Page() {
 
   return (
     <Container>
-      <ul className="grid grid-cols-2 gap-3">
+      <div className="mb-2">
+        <h2 className="text-2xl font-bold">All of your todos</h2>
+      </div>
+
+      <hr />
+
+      <ul className="sm:grid sm:grid-cols-2 gap-3 grid grid-cols-1 items-start mt-3">
         {courses.map((course) => (
           <li key={course.id} className="rounded-lg shadow-2xl overflow-hidden">
             <CourseItemHeader course={course} />
 
-            <div className="p-1 flex align-middle justify-between">
+            <div className="p-1 flex items-start justify-between">
               <p className="text-lg font-bold self-center">
-                No todos completed
+                {todos.filter(
+                  (todo) =>
+                    todo.course_id === course.id && todo.completed === false
+                ).length > 0
+                  ? `${
+                      todos.filter(
+                        (todo) =>
+                          todo.course_id === course.id &&
+                          todo.completed === false
+                      ).length
+                    } todo left`
+                  : "No todos left"}
               </p>
               <Link
                 href={`/main/todos/add-todo/${course.id}`}
@@ -40,16 +57,20 @@ export default async function Page() {
               </Link>
             </div>
 
-            {todos
-              .filter(
-                (todo) =>
-                  todo.course_id === course.id && todo.completed === false
-              )
-              .map((todo) => (
-                <ul key={todo.id} className="p-2 ">
-                  <TodoItem todo={todo} />
-                </ul>
-              ))}
+            {todos.some(
+              (todo) => todo.course_id === course.id && !todo.completed
+            ) && (
+              <ul className="p-2 lg:grid lg:grid-cols-2 lg:gap-3 flex flex-col gap-2">
+                {todos
+                  .filter(
+                    (todo) => todo.course_id === course.id && !todo.completed
+                  )
+                  .slice(0, 4)
+                  .map((todo) => (
+                    <TodoItem key={todo.id} todo={todo} />
+                  ))}
+              </ul>
+            )}
           </li>
         ))}
       </ul>

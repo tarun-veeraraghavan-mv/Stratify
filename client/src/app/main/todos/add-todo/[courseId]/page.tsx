@@ -29,18 +29,18 @@ const progressOptions: SelectDataOptions[] = [
 const priorityOptions: SelectDataOptions[] = [
   {
     id: 1,
-    label: "Low priority",
-    value: "Low priority",
+    label: "Low",
+    value: "Low",
   },
   {
     id: 2,
-    label: "Medium priority",
-    value: "Medium priority",
+    label: "Medium",
+    value: "Medium",
   },
   {
     id: 3,
-    label: "High priority",
-    value: "High priority",
+    label: "High",
+    value: "High",
   },
 ];
 
@@ -83,7 +83,7 @@ export default async function page({
           <Select
             labelText="Priority"
             selectData={priorityOptions}
-            name="progress"
+            name="priority"
           />
           <Input
             labelText="Remarks"
