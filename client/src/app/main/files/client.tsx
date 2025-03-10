@@ -23,14 +23,14 @@ export default function Client({
 
   return (
     <div>
-      <div className="mb-2 flex justify-between align-middle">
-        <p className="text-xl font-bold hidden md:block">
+      <div className="mb-2 flex flex-col gap-2 sm:flex sm:flex-row justify-between align-middle">
+        <p className="text-xl font-bold hidden lg:block">
           All of your resources
         </p>
         <input
           type="text"
           placeholder="Search your files"
-          className="py-1 px-2 bg-gray-300 w-[300px] rounded-lg focus:outline-none focus:ring-0 text-gray-900 md:focus:w-[370px] transition-all duration-200"
+          className="py-1 px-2 bg-gray-300 w-[300px] rounded-lg focus:outline-none focus:ring-0 text-gray-900 md:focus:w-[320px] transition-all duration-200"
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />

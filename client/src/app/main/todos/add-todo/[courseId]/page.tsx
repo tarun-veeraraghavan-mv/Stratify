@@ -55,7 +55,7 @@ export default async function page({
     redirect("/signup");
   }
 
-  const { courseId } = await params;
+  const { courseId } = params;
   console.log(courseId);
 
   return (

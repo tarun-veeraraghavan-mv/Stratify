@@ -16,7 +16,7 @@ export default async function Navbar() {
 
   return (
     <div className="sticky top-0 border-b-2 border-gray-300 bg-white">
-      <ul className="flex justify-between py-4 px-5 ">
+      <ul className="sm:flex justify-between py-4 px-5 hidden">
         <li className="text-lg font-bold  self-center">
           <Link href="/main/dashboard">Dashboard</Link>
         </li>
@@ -36,9 +36,10 @@ export default async function Navbar() {
             width={40}
             height={40}
           />
-          <p className="self-center">{user.name}</p>
+          <p className="self-center ">{user.name}</p>
         </li>
       </ul>
+      <div className="sm:hidden py-4 px-5 text-lg font-bold">Menu</div>
     </div>
   );
 }
