@@ -15,3 +15,5 @@ The **Stratify** is a modern solution for college students to manage their acade
 
 + **Next.js + TypeScript 🚀** – Ensures a smooth, fast, and maintainable frontend experience, perfect for a student dashboard that needs reliability and performance. TypeScript helps prevent errors and improves scalability.
 + **Go (Gin Framework) ⚡** – Chosen for its speed and efficiency, Go allows the backend to handle multiple requests seamlessly, making the app responsive and scalable.
++ **PostgreSQL 🛠️** – A rock-solid database for managing structured student data like courses, tasks, and deadlines while ensuring reliability and data integrity.
++ **Vitest + React Testing Library 🧪** – Enables fast and reliable testing to ensure every feature works smoothly, reducing potential issues before they affect users.
