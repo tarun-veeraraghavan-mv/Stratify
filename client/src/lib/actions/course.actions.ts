@@ -3,9 +3,10 @@
 import axios from "axios";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import { URL } from "../constants";
 
 // const PROD_BACKEND_URL = process.env.BACKEND_URL as string;
-const DEV_BACKEND_URL = process.env.DEV_BACKEND_URL as string;
+const DEV_BACKEND_URL = URL;
 
 export async function createCourse(formData: FormData) {
   const semesterNumber = formData.get("semesterNumber") as string;

@@ -9,15 +9,15 @@ import { Decoded } from "../types/auth.types";
 const JWT_SECRET = "qwsqwehweruwehrweiourhwer";
 const JWT_EXPIRES_IN = "90d";
 
-// const PROD_BACKEND_URL = process.env.BACKEND_URL as string;
-const DEV_BACKEND_URL = process.env.DEV_BACKEND_URL as string;
+const PROD_BACKEND_URL = process.env.BACKEND_URL as string;
+// const DEV_BACKEND_URL = process.env.DEV_BACKEND_URL as string;
 
 export async function signup(formData: FormData) {
   const name = formData.get("name");
   const email = formData.get("email");
   const password = formData.get("password");
 
-  const user = await axios.post(`${DEV_BACKEND_URL}/api/v1/users`, {
+  const user = await axios.post(`${PROD_BACKEND_URL}/api/v1/users`, {
     name,
     email,
     password,
@@ -61,7 +61,7 @@ export async function getCurrentUserId() {
 
 export async function getCurrentUser(id: number) {
   try {
-    const user = await axios.get(`${DEV_BACKEND_URL}/api/v1/users/byId/${id}`);
+    const user = await axios.get(`${PROD_BACKEND_URL}/api/v1/users/byId/${id}`);
 
     console.log(user.data);
 
@@ -76,7 +76,7 @@ export async function login(formData: FormData) {
   const password = formData.get("password") as string;
 
   const user = await axios.get(
-    `${DEV_BACKEND_URL}/api/v1/users/byEmail/${email}`
+    `${PROD_BACKEND_URL}/api/v1/users/byEmail/${email}`
   );
 
   if (user.data.password === password) {

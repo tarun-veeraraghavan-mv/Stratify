@@ -2,9 +2,10 @@
 
 import axios from "axios";
 import { redirect } from "next/navigation";
+import { URL } from "../constants";
 
 // const PROD_BACKEND_URL = process.env.BACKEND_URL as string;
-const DEV_BACKEND_URL = process.env.DEV_BACKEND_URL as string;
+const DEV_BACKEND_URL = URL;
 
 export async function createProfile(formData: FormData) {
   console.log(Object.fromEntries(formData));

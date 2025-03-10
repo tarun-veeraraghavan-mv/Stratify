@@ -3,8 +3,9 @@
 import axios from "axios";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import { URL } from "../constants";
 
-const DEV_BACKEND_URL = process.env.DEV_BACKEND_URL as string;
+const DEV_BACKEND_URL = URL;
 
 export async function getContactsForUser(id: number) {
   const contacts = await axios.get(`${DEV_BACKEND_URL}/api/v1/contact/${id}`);
