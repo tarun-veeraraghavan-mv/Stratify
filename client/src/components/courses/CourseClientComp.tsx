@@ -39,9 +39,12 @@ export default function CourseClientComp({ courses }: CourseClientCompProps) {
       <hr />
 
       <ul className="lg:grid lg:grid-cols-3 gap-3 mt-4 md:grid md:grid-cols-2 grid grid-cols-1">
-        {
-          // input.length > 0
-          //   ?
+        {input.length === 0 && filteredCourses.length === 0 && (
+          <p className="font-bold text-lg">
+            👋 No course yet! Start by adding one
+          </p>
+        )}
+        {input.length > 0 ? (
           filteredCourses.length > 0 ? (
             filteredCourses.map((course) => (
               <CourseItem
@@ -51,16 +54,17 @@ export default function CourseClientComp({ courses }: CourseClientCompProps) {
               />
             ))
           ) : (
-            <p className="font-bold text-lg">👋 No courses yet! Start by adding one</p>
+            <p className="font-bold text-lg">👋 No course for this search</p>
           )
-          // : optimisticCourses.map((course) => (
-          //     <CourseItem
-          //       course={course}
-          //       key={course.id}
-          //       handleDelete={handleDelete}
-          //     />
-          //   ))
-        }
+        ) : (
+          optimisticCourses.map((course) => (
+            <CourseItem
+              course={course}
+              key={course.id}
+              handleDelete={handleDelete}
+            />
+          ))
+        )}
       </ul>
     </>
   );
