@@ -55,9 +55,6 @@ export default async function Page({
     redirect("/signup");
   }
 
-  const { courseId } = params;
-  console.log(courseId);
-
   return (
     <div className="max-w-[500px] px-[32px] mx-auto my-[20px]">
       <h2 className="text-xl font-bold mb-2">Add todo</h2>
@@ -98,7 +95,11 @@ export default async function Page({
             type="text"
           />
           <input type="hidden" value={id} name="user_id" id="user_id" />
-          <input type="hidden" value={parseInt(courseId)} name="course_id" />
+          <input
+            type="hidden"
+            value={parseInt(params.courseId)}
+            name="course_id"
+          />
         </div>
         <div>
           <SubmitButton text="Create event" />
