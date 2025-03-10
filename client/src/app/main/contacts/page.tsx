@@ -13,7 +13,7 @@ export default async function Page() {
   }
 
   const contacts: Contact[] = await getContactsForUser(parseInt(id));
-  const files = await viewFiles();
+  const files = await viewFiles(parseInt(id));
 
   return <ContactClientComp contacts={contacts} files={files} />;
 }
