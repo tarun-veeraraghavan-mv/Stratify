@@ -12,11 +12,13 @@ import { FileUpload as FileUploadType } from "@prisma/client";
 interface ContactClientCompProps {
   contacts: Contact[];
   files: FileUploadType[];
+  userId: string;
 }
 
 export default function ContactClientComp({
   contacts,
   files,
+  userId,
 }: ContactClientCompProps) {
   const [input, setInput] = useState("");
 
@@ -35,10 +37,8 @@ export default function ContactClientComp({
         <hr />
 
         <ContactTable contacts={filteredContacts} />
-        <FileUpload courseId="12" />
+        <FileUpload courseId="12" userId={userId} />
         <FileAccess files={files} />
-
-       
       </Container>
     </div>
   );
