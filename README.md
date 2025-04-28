@@ -2,10 +2,8 @@
 
 **Stratify** is an all-in-one platform designed to help students manage their academic life. It allows users to **organize courses**, track assignments, and set academic goals. The app also provides secure storage for important files like **PDFs, Word documents, and links**. With **AI-powered assistance** from Gemini AI and an **intuitive**, distraction-free interface, students stay organized and **productive**.
 
-- [Live App](https://stratify-green.vercel.app/)
 - [Live Demo Video](https://www.youtube.com/watch?v=JNJY4FiVllE)
 - [DB Diagrams](https://drive.google.com/file/d/1VedyhQ-3F94yEm7A4NkrC6XEIeN5w9Ux/view)
-- [Source Code](https://github.com/tarun-veeraraghavan-mv/Stratify)
 
 ## Why this application? 🔍
 + **Made for Students, Not Enterprises 📚:** Unlike complex software like Jira, Stratify is designed specifically for students, focusing on simplicity and ease of use. It removes unnecessary features, ensuring students can manage their academic tasks without being overwhelmed by enterprise-level tools.
