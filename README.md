@@ -15,12 +15,10 @@
 + **TypeScript (TS):** TypeScript enhances code quality with static typing, ensuring type safety and improving developer productivity through better IntelliSense and debugging. It also facilitates easier code maintenance and reduces bugs in larger codebases.
 + **Go/Golang:** Go is chosen for its simplicity, performance, and concurrency support, making it ideal for building fast, scalable microservices. Its low memory footprint and easy deployment make it highly efficient for backend services.
 + **Postgres + Prisma:** PostgreSQL provides reliable, high-performance relational data storage, while Prisma offers an elegant ORM for easy and type-safe database interaction. The combination ensures robust data management and seamless API integration.
-+ **GenAI Gemini:** Gemini AI powers real-time, personalized suggestions, helping students stay organized and improve productivity through smart, automated assistance. It adds an interactive and dynamic layer to the user experience, making the app more intuitive.
 
 ## Key Features 🚀
 - **Course Management**: Add, edit, and delete courses along with professor details and schedules.
 - **Assignment Tracking**: Keep track of assignments and deadlines.
-- **AI Assistance**: Real-time, AI-powered suggestions to enhance productivity.
 - **File Storage**: Securely upload and manage important academic files (PDFs, Word documents, links).
 - **Goal Setting**: Set and track academic goals to stay motivated.
 
@@ -33,15 +31,29 @@ To get started with Stratify locally:
    git clone https://github.com/tarun-veeraraghavan-mv/Stratify.git
    ```
 
-2. Install dependencies:
+2. Setup Postgres and Redis databases for server to connect to:
+   In root of directory run
    ```bash
-   npm install
+   docker-compose up --build
    ```
 
-3. Set up environment variables in a `.env` file (check `.env.example` for reference).
-
-4. Run the app:
+3. Provision AWS resources using terraform:
    ```bash
+   terraform init
+   terraform apply
+   ```
+
+
+4. Run the server:
+   ```bash
+   cd server
+   mvn clean install
+   ```
+
+4. To run the client:
+   ```bash
+   cd client
+   npm install
    npm run dev
    ```
 
