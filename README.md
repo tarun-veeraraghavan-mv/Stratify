@@ -82,5 +82,4 @@ To get started with Stratify locally:
    npm run dev
    ```
 
-5. Open your browser and go to `http://localhost:3000` to view the app.
-
+5. Now, open your browser and visit 👉 http://localhost:3000
