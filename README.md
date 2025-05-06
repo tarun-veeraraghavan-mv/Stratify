@@ -21,7 +21,7 @@ With a clean, minimalist design, Stratify offers a distraction-free, intuitive e
 
 - ⚡ **Next.js**: Enables fast, SEO-friendly web apps with SSR, SSG, and API routes. Its built-in features improve performance and make scaling easier.
 - 🧠 **TypeScript (TS)**: Enhances code quality with static typing, improving debugging, IntelliSense, and overall development experience.
-- 🚀 **Go/Golang**: Chosen for its simplicity, speed, and concurrency support—ideal for scalable microservices with low resource usage.
+- - ☕ **Java Spring Boot**: Selected for its robust ecosystem, rapid development with built-in tools, and strong support for building scalable, secure microservices.
 - 🗃️ **PostgreSQL + Prisma**: PostgreSQL offers reliable, high-performance relational data storage, while Prisma provides elegant, type-safe DB interactions.
 
 ---
