@@ -1,9 +1,9 @@
 # 🌟 Stratify 📚
 
-**Stratify** is an all-in-one platform designed to help students manage their academic life. It allows users to organize courses, track assignments, and set academic goals. The app also provides secure storage for important files like PDFs, Word documents, and links. With AI-powered assistance from Gemini AI and an intuitive, distraction-free interface, students stay organized and productive.
+**Stratify** is an all-in-one platform designed to help students manage their academic life. It allows users to organize courses, track assignments, and set academic goals. The app also provides secure storage for important files like PDFs, Word documents, and links.
 
 🎥 **Live Demo Video**  
-🧠 **DB Diagrams**
+🧠 **[DB Diagrams](https://drive.google.com/file/d/1IwtmqZZxZeMgUa2cu2eVfP4zB-AEoH3v/view)**
 
 ---
 
@@ -11,9 +11,6 @@
 
 ### 🎓 Made for Students, Not Enterprises  
 Unlike complex software like Jira, Stratify is designed specifically for students, focusing on simplicity and ease of use. It removes unnecessary features, ensuring students can manage their academic tasks without being overwhelmed by enterprise-level tools.
-
-### 🤖💡 AI Real-Time Suggestions  
-Powered by AI, Stratify provides real-time suggestions to help students stay organized and on top of tasks and deadlines. The AI learns from students' behavior, offering personalized advice and reminders to improve productivity and academic performance.
 
 ### ✨ Simplicity and Minimalism  
 With a clean, minimalist design, Stratify offers a distraction-free, intuitive experience that keeps students focused on what matters most. Every feature is designed to be straightforward and user-friendly, eliminating clutter and making it easy to navigate the app effortlessly.
@@ -62,14 +59,14 @@ To get started with Stratify locally:
    docker-compose up --build
    ```
 
-3. Provision AWS resources using terraform:
+3. Provision AWS resources using terraform: (Make sure terraform is installed locally in your system if not visit 👉 [here!](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli))
    ```bash
    terraform init
    terraform apply
    ```
 
 
-4. Run the server:
+4. Run the server: (Can also use inbuilt tool in your favorite Java IDE)
    ```bash
    cd server
    mvn clean install
