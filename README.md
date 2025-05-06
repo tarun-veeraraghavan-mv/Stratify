@@ -21,7 +21,7 @@ With a clean, minimalist design, Stratify offers a distraction-free, intuitive e
 
 - ⚡ **Next.js**: Enables fast, SEO-friendly web apps with SSR, SSG, and API routes. Its built-in features improve performance and make scaling easier.
 - 🧠 **TypeScript (TS)**: Enhances code quality with static typing, improving debugging, IntelliSense, and overall development experience.
-- - ☕ **Java Spring Boot**: Selected for its robust ecosystem, rapid development with built-in tools, and strong support for building scalable, secure microservices.
+- ☕ **Java Spring Boot**: Selected for its robust ecosystem, rapid development with built-in tools, and strong support for building scalable, secure microservices.
 - 🗃️ **PostgreSQL + Prisma**: PostgreSQL offers reliable, high-performance relational data storage, while Prisma provides elegant, type-safe DB interactions.
 
 ---
@@ -35,14 +35,6 @@ With a clean, minimalist design, Stratify offers a distraction-free, intuitive e
 
 ---
 
-## 🛠️ Getting Started
-
-To run Stratify locally:
-
-### 🔁 Clone the Repository
-```bash
-git clone https://github.com/tarun-veeraraghavan-mv/Stratify.git
-
 
 ## Getting Started 🛠️
 
@@ -53,7 +45,7 @@ To get started with Stratify locally:
    git clone https://github.com/tarun-veeraraghavan-mv/Stratify.git
    ```
 
-2. Setup Postgres and Redis databases for server to connect to:
+2. Setup Postgres and Redis databases for server to connect to: (Make sure you have Docker Desktop installed in your local machine. If not visit 👉 [here](https://docs.docker.com/desktop/setup/install/mac-install/))
    In root of directory run
    ```bash
    docker-compose up --build
