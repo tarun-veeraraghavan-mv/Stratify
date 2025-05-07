@@ -3,6 +3,9 @@
 **Stratify** is an all-in-one platform designed to help students manage their academic life. It allows users to organize courses, track assignments, and set academic goals. The app also provides secure storage for important files like PDFs, Word documents, and links.
 
 🎥 **Live Demo Video**  
+
+https://github.com/user-attachments/assets/4e7e8b73-9ccd-4b78-a9f0-a1a6f21040f5
+
 🧠 **[DB Diagrams](https://drive.google.com/file/d/1IwtmqZZxZeMgUa2cu2eVfP4zB-AEoH3v/view)**
 
 ---
